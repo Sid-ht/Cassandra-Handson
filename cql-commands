@@ -563,7 +563,7 @@ CREATE TABLE killrvideo.videos (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99p';
     
-COPY videos from '/home/local/c5201418/videos.csv' with Header = True;
+COPY videos from 'videos.csv' with Header = True;
 
 select count(*) from videos;
 
@@ -597,7 +597,7 @@ CREATE TABLE killrvideo.videos (
     AND speculative_retry = '99p';
 
 
-COPY videos from '/home/local/c5201418/videos_encoding.csv' with Header = True;
+COPY videos from 'videos_encoding.csv' with Header = True;
 
 
  video_id                             | added_date               | description                                                                                                                                                       | encoding | tags                                  | title                                                                                             | user_id
@@ -627,7 +627,7 @@ PRIMARY KEY (tag, added_year)
 );
 
 
-source '/home/local/c5201418/videos_count_by_tag.cql';
+source 'videos_count_by_tag.cql';
 
 select * from videos_count_by_tag;
 
